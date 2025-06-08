@@ -1,8 +1,9 @@
 import React from 'react'
+import Item from '../Components/Items/item'
 
 export const Medicine = () => {
   return (
-    <div>Medicine</div>
-  )
+<Item/>
+)
 }
 export default Medicine

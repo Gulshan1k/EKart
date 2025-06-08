@@ -1,11 +1,14 @@
-import React from 'react';
-import './Hero.css';
-import bannerImage from '../Components/Assets/Banner.jpg';
-import product1 from '../Components/Assets/M1.jpg';
-import product2 from '../Components/Assets/M2.jpg';
-import product3 from '../Components/Assets/M3.jpg';
+import React from "react";
+import "./Hero.css";
+import bannerImage from "../Components/Assets/Banner.jpg";
+import product1 from "../Components/Assets/M1.jpg";
+import product2 from "../Components/Assets/M2.jpg";
+import product3 from "../Components/Assets/M3.jpg";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate(); // Initialize navigate function
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -13,7 +16,10 @@ export const Hero = () => {
         <div className="hero-left">
           <h2>Your Trusted Medical Marketplace</h2>
           <p>Find top-quality medicines & healthcare essentials at affordable prices.</p>
-          <button className="cta-button">Shop Now</button>
+          {/* Corrected Button */}
+          <button className="cta-button" onClick={() => navigate("/medicine")}>
+            Shop Now
+          </button>
         </div>
         <div className="hero-right">
           <img src={bannerImage} alt="Healthcare Solutions" />
@@ -59,8 +65,9 @@ export const Hero = () => {
       <section className="cta-section">
         <h3>Stay Healthy, Stay Safe</h3>
         <p>Order your medicines from the comfort of your home.</p>
-        <button className="cta-button">Browse More</button>
-      </section>
+<button className="btn btn-primary cta-button" onClick={() => navigate("/contact")}>
+      Contact Us
+    </button>      </section>
     </div>
   );
 };
