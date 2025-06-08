@@ -5,3 +5,4 @@ export const HomeCate = () => {
     <div>HomeCate</div>
   )
 }
+export default HomeCate

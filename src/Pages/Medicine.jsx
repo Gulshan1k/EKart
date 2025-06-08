@@ -5,4 +5,4 @@ export const Medicine = () => {
     <div>Medicine</div>
   )
 }
-export default Medicine;
+export default Medicine
