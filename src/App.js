@@ -7,6 +7,7 @@ import Cart from "./Pages/Cart";
 import LoginSignUp from "./Pages/LoginSignUp";
 import Medicine from "./Pages/Medicine";
 import Contact from "./Pages/Contact";
+import Footer from "./Components/Footer/footer";
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/Cart' element={<Cart />} />
           <Route path='/LoginSignUp' element={<LoginSignUp />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

@@ -1,18 +1,25 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from '../Assets/sho.png';
-import cartIcon from '../Assets/Logo.jpg';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import logo from "../Assets/sho.png";
+import cartIcon from "../Assets/Logo.jpg";
 
 export const Navbar = () => {
-  const location = useLocation();
+  const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem("loggedIn");
+
+  const handleLogout = () => {
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("token");
+    navigate("/"); // Redirect to Home after logout
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div className="container">
         {/* Logo */}
         <Link to="/" className="navbar-brand d-flex align-items-center">
-          <img src={cartIcon} alt="Logo" className="me-2" style={{ width: '40px', height: '40px' }} />
+          <img src={cartIcon} alt="Logo" className="me-2" style={{ width: "40px", height: "40px" }} />
           <span className="fw-bold text-primary">E-MEDICAL KART</span>
         </Link>
 
@@ -26,27 +33,29 @@ export const Navbar = () => {
           <ul className="navbar-nav mx-auto">
             {["Home", "Medicine", "Lab Test", "Contact"].map((item) => (
               <li key={item} className="nav-item">
-                <Link 
-                  to={`/${item.toLowerCase()}`} 
-                  className={`nav-link ${location.pathname === `/${item.toLowerCase()}` ? 'active text-primary fw-bold' : ''}`}
-                >
+                <Link to={`/${item.toLowerCase()}`} className="nav-link">
                   {item}
                 </Link>
               </li>
             ))}
           </ul>
 
-          {/* Search Bar */}
-          <form className="d-flex me-3">
-            <input className="form-control me-2" type="search" placeholder="Search for products..." />
-            <button className="btn btn-outline-primary" type="submit">Search</button>
-          </form>
-
-          {/* Login & Cart */}
+          {/* Login, Logout & Cart */}
           <div className="d-flex align-items-center">
-            <Link to="/loginsignup" className="btn btn-primary me-3">Login</Link>
+            {isLoggedIn ? (
+              <>
+                <span className="text-success fw-bold me-3">Logged In</span>
+                <button className="btn btn-danger me-3" onClick={handleLogout}>
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link to="/loginsignup" className="btn btn-primary me-3">
+                Login
+              </Link>
+            )}
             <Link to="/cart">
-              <img src={logo} alt="Cart" className="img-fluid" style={{ width: '30px', height: '30px' }} />
+              <img src={logo} alt="Cart" className="img-fluid" style={{ width: "30px", height: "30px" }} />
             </Link>
           </div>
         </div>

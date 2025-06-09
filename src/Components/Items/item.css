@@ -4,29 +4,28 @@
   margin: auto;
 }
 
-/* Medicine Card Styling */
+
 .card {
-  height: 400px; /* Slightly larger for better spacing */
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-radius: 12px; /* Smooth rounded corners */
+  border-radius: 12px; 
   text-align: center;
-  background: linear-gradient(135deg, #ffffff, #f5f5f5); /* Soft gradient */
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Slight hover lift */
+  transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Styling */
 .card-img-top {
-  max-height: 160px; /* Ensuring uniform image size */
+  max-height: 160px; 
   width: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -34,10 +33,9 @@
 }
 
 .card-img-top:hover {
-  transform: scale(1.1); /* Subtle zoom effect */
+  transform: scale(1.1); 
 }
 
-/* Card Body Styling */
 .card-body {
   flex-grow: 1;
   display: flex;
@@ -45,23 +43,20 @@
   justify-content: space-between;
 }
 
-/* Title Styling */
 .card-title {
   font-size: 20px;
   font-weight: bold;
   color: #333;
 }
 
-/* Price Styling */
 .card-text {
   font-size: 16px;
   color: #666;
   margin-bottom: 15px;
 }
 
-/* Button Styling */
 .green-btn {
-  background-color: #4CAF50; /* Refined green shade */
+  background-color: #4CAF50; 
   color: white;
   border: none;
   padding: 12px 22px;
@@ -73,6 +68,6 @@
 }
 
 .green-btn:hover {
-  background-color: #388E3C; /* Darker green */
+  background-color: #388E3C;
   transform: scale(1.08);
 }
